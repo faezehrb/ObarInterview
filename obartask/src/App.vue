@@ -1,16 +1,11 @@
-<script setup>
-  
-</script>
 
 <template>
-  <header>
-
-  </header>
-
-  <main>
-
-  </main>
+    <Layout/>
 </template>
+
+<script setup>
+  import Layout from './components/Layout.vue';
+</script>
 
 <style scoped>
 
