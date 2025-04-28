@@ -7,6 +7,9 @@
   font-style: normal;
 }
 
+body{
+  background-color: #fbfbfb !important;
+}
 * {
   font-family: 'Vazir', sans-serif;
 }

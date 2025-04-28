@@ -40,6 +40,7 @@
   }
   @media (max-width: 991px) {
     #navbarNav {
+      height: 74px;
       text-align: center;
     }
   
