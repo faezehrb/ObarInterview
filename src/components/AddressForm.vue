@@ -4,6 +4,11 @@ import L from 'leaflet';
 import axios from 'axios';
 import 'leaflet/dist/leaflet.css'; 
 
+
+onMounted(() => {
+  emit('update:step', 1); 
+}); 
+
 const props = defineProps({
   step: Number
 })
@@ -96,10 +101,10 @@ async function submitForm() {
     emit('update:step', 3);
   } catch (error) {
     if (error.response) {
-      console.error("❌ خطای سمت سرور:", error.response.status);
-      console.error("💬 پیام سرور:", error.response.data);
+      console.error(" خطای سمت سرور:", error.response.status);
+      console.error(" پیام سرور:", error.response.data);
     } else {
-      console.error("❗ خطا:", error.message);
+      console.error(" خطا:", error.message);
     }
   } finally {
     loading.value = false;
@@ -245,5 +250,10 @@ function initMap() {
   padding: 1rem;
   box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.1);
   z-index: 999;
+}
+
+.form-check-input:checked {
+  background-color: #00BFA5; 
+  border-color: #00BFA5;
 }
 </style>
