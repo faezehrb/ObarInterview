@@ -3,18 +3,23 @@
     <header>
       <MainMenu />
     </header>
-      <main class="page-wrapper">
-        <div class="container p-0">
-          <div class="form-wrapper">
-            <router-view />
-          </div>
+    <main class="page-wrapper">
+      <div class="container p-0" :class="{ 'no-style': currentStep === 3 }">
+        <div class="form-wrapper">
+          <router-view v-slot="{ Component }">
+            <component :is="Component" v-model:step="currentStep" />
+          </router-view>
         </div>
-      </main>
+      </div>
+    </main>
   </div>
 </template>
 
 <script setup>
-  import MainMenu from './MainMenu.vue'
+import { ref } from 'vue';
+import MainMenu from './MainMenu.vue';
+
+const currentStep = ref(1);
 </script>
 
 <style scoped>
@@ -29,6 +34,10 @@
 
 .form-wrapper {
   width: 100%;
+}
+.container.no-style {
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 
 @media (min-width: 992px) {

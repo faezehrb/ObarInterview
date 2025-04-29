@@ -1,5 +1,6 @@
 @import './base.css';
 
+
 @font-face {
   font-family: 'Vazir';
   src: url('@/assets/fonts/Vazirmatn-Regular.woff2') format('woff2');
@@ -13,7 +14,33 @@ body{
 * {
   font-family: 'Vazir', sans-serif;
 }
+.btn{
+  font-size: 16px !important;
+}
+.success-message {
+  text-align: center;
+  margin-top: 2rem;
+}
+h4{
+    color: #37474F;
+}
+.fs-14 {
+  font-size: 14px !important;
+}
+.fs-16 {
+  font-size: 16px !important;
+}
+.coustombtn-success {
+  background-color: #ffffff00 !important;
+  border-color: #00BFA5 !important;
+  color: #00BFA5 !important;
+}
 
+.coustombtn-success:hover {
+  background-color: #009f8c !important;
+  border-color: #009f8c !important;
+  color: #ffffff !important;
+}
 @media (hover: hover) {
   a:hover,
   a.active {
@@ -25,6 +52,8 @@ a.active {
   color: #00BFA5 !important;
 }
 
-@media (min-width: 1024px) {
-
+@media (max-width: 998px) {
+  .btn{
+    font-size: 14px !important;
+  }
 }
